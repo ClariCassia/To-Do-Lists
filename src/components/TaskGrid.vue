@@ -1,6 +1,9 @@
 <template>
   <div class="tasks-grid">
-    <Task v-for="task in tasks" :key="task.name" :task="task"></Task>
+    <template v-if="tasks.length">
+      <Task v-for="task in tasks" :key="task.name" :task="task"></Task>
+    </template>
+    <p class="no-task" v-else>Suas tarefas estão em dia 😉</p>
   </div>
 </template>
 
@@ -20,5 +23,17 @@ export default {
 </script>
 
 <style  scoped>
+.tasks-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tasks-grid .task {
+  margin: 10px;
+}
 
+.no-task {
+  color: #AAA;
+  font-size: 1.7rem;
+}
 </style>
