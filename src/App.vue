@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Tarefas</h1>
-    <NewTaskVue @taskAdded="addNewTask"></NewTaskVue>
+    <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
     <TaskGrid :tasks="tasks"></TaskGrid>
   </div>
 </template>
@@ -21,16 +21,8 @@ export default {
   },
   methods: {
     addNewTask(newTask) {
-      const sameName = t => t.name.toLowerCase() === newTask.name.toLowerCase()
-      const reallyNew = this.tasks.filter(sameName).length == 0
-      if (reallyNew) { //
-        this.tasks.push({
-          name: newTask.name,
-          pending: newTask.pending || true
-        })
-      } else {
-        alert('Tarefa ja existe! Use outro nome para uma nova tarefa.')
-      }
+      const { name, pending = true } = newTask;
+      this.tasks.push({ name, pending });
     }
   }
 }
