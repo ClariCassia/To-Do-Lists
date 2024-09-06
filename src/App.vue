@@ -4,8 +4,8 @@
       <h1>Minhas Tarefas</h1>
       <img :src="img" alt="Logo" class="logo">
     </div>
-    <TasksProgress :progress="processed" :tasks="tasks"></TasksProgress>
     <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
+    <TasksProgress :progress="processed" :tasks="tasks"></TasksProgress>
     <TaskGrid @taskDeleted="deleteTask" @taskChanged="tooglePedding" :tasks="tasks"></TaskGrid>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app {  
   display: flex;
   flex: 1;
   flex-direction: column;

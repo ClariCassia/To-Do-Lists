@@ -28,24 +28,25 @@ export default {
 .task {
     position: relative;
     box-sizing: border-box;
-    width: 350px;
-    height: 150px;
-    padding: 10px;
+    width: 450px;
+    height: 40px;
+    padding: 12px;
     border-radius: 8px;
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 300;
     cursor: pointer;
     user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    filter: drop-shadow(black 1px 1px 1px);
+
   }
   
   .pending {
     border-left: 12px solid #B73229;
     background-color: #F44336;
   }
-  
   .pending .close {
     background-color: #B73229;
   }

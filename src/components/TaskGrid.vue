@@ -27,6 +27,7 @@ export default {
 <style  scoped>
 .tasks-grid {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
 }
