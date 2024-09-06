@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Tarefas</h1>
     <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
-    <TaskGrid :tasks="tasks" @taskDeleted="deleteTask" @taskChanged="tooglePedding"></TaskGrid>
+    <TaskGrid @taskDeleted="deleteTask" @taskChanged="tooglePedding" :tasks="tasks"></TaskGrid>
   </div>
 </template>
 
