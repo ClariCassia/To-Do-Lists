@@ -1,7 +1,8 @@
 <template>
   <div class="tasks-grid">
     <template v-if="tasks.length">
-      <Task v-for="task in tasks" :key="task.name" :task="task"></Task>
+      <Task v-for="(task, id) in tasks" :key="id" 
+      @click="$emit('taskDeleted', id)" :task="task"></Task>
     </template>
     <p class="no-task" v-else>Suas tarefas estão em dia 😉</p>
   </div>
@@ -28,6 +29,7 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .tasks-grid .task {
   margin: 10px;
 }

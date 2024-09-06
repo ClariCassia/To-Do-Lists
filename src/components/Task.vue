@@ -1,7 +1,8 @@
 <template>
-    <div class="task" :class="stateClass">
-        <p>{{ task.name }}</p>
-    </div>
+  <div class="task" :class="stateClass">
+    <span @click="$emit('taskDeleted', task)" class="close">x</span>
+    <p>{{ task.name }}</p>
+  </div>
 </template>
   
   <script>
@@ -15,8 +16,8 @@ export default {
   computed: {
     stateClass() {
       return {
-        pending: this.task.pending,
-        done: !this.task.pending
+        pending: !this.task.pending,
+        done: this.task.pending
       }
     }
   }
@@ -25,6 +26,7 @@ export default {
   
   <style scoped>
 .task {
+    position: relative;
     box-sizing: border-box;
     width: 350px;
     height: 150px;
@@ -37,18 +39,44 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center
-}
-
-.pending {
+  }
+  
+  .pending {
     border-left: 12px solid #B73229;
     background-color: #F44336;
-}
-
-.done {
+  }
+  
+  .pending .close {
+    background-color: #B73229;
+  }
+  
+  .done {
     color: #DDD;
     border-left: 12px solid #0a8f08;
     background-color: #4CAF50;
     text-decoration: line-through;
-}
+  }
+  
+  .done .close {
+    background-color: #0a8f08;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .close:hover {
+    background-color: #42545eb7;
+    transition: 0.3s ease, transform 0.2s ease;
+  }
 </style>
   

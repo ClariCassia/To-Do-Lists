@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Tarefas</h1>
     <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
-    <TaskGrid :tasks="tasks"></TaskGrid>
+    <TaskGrid :tasks="tasks" @taskDeleted="deleteTask"></TaskGrid>
   </div>
 </template>
 
@@ -23,6 +23,9 @@ export default {
     addNewTask(newTask) {
       const { name, pending = true } = newTask;
       this.tasks.push({ name, pending });
+    },
+    deleteTask(id) {
+      this.tasks.splice(id, 1);
     }
   }
 }
