@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <h1>Tarefas</h1>
+    <div class="container">
+      <h1>Minhas Tarefas</h1>
+      <img :src="img" alt="Logo" class="logo">
+    </div>
     <TasksProgress :progress="processed" :tasks="tasks"></TasksProgress>
     <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
     <TaskGrid @taskDeleted="deleteTask" @taskChanged="tooglePedding" :tasks="tasks"></TaskGrid>
@@ -11,6 +14,7 @@
 import TaskGrid from './components/TaskGrid.vue'
 import NewTaskVue from './components/NewTask.vue'
 import TasksProgress from './components/Tasks-Progress.vue';
+import img from './images/IMG1.png';
 export default {
   components: {
     TaskGrid,
@@ -19,7 +23,8 @@ export default {
   },
   data() {
     return {
-      tasks: []
+      tasks: [], 
+      img
     }
   },
   computed: {
@@ -55,8 +60,22 @@ export default {
 }
 
 #app h1 {
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
   font-weight: 300;
   font-size: 3rem;
+  filter: drop-shadow(black 2px 2px 2px);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+
+}
+img{
+  width: 120px;
+  margin-bottom: 20px;
+  height: auto;
+  filter: drop-shadow(black 2px 2px 2px);
 }
 </style>
