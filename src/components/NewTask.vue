@@ -77,7 +77,7 @@ button.form-element {
 
 button:hover {
     background-color: #0c7cd5;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: 0.3s ease, transform 0.2s ease;
 
 }
 
