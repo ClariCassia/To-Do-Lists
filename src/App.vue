@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Tarefas</h1>
     <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
-    <TaskGrid :tasks="tasks" @taskDeleted="deleteTask"></TaskGrid>
+    <TaskGrid :tasks="tasks" @taskDeleted="deleteTask" @taskChanged="tooglePedding"></TaskGrid>
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
     },
     deleteTask(id) {
       this.tasks.splice(id, 1);
+    },
+    tooglePedding(id) {
+      this.tasks[id].pending = !this.tasks[id].pending
     }
   }
 }
