@@ -62,7 +62,7 @@ export default {
 #app h1 {
   margin: 0 0 5px 0;
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 4rem;
   filter: drop-shadow(black 2px 2px 2px);
 }
 

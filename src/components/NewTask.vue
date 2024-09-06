@@ -1,8 +1,7 @@
 <template>
   <div class="new-task">
-    <input v-model="name" type="text" class="form-element"
-      placeholder="Adicione uma nova tarefa" :class="{'input-error': nameError}"
-      @keydown.enter="validateInput">
+    <input v-model="name" type="text" class="form-element" placeholder="Adicione uma nova tarefa"
+      :class="{'input-error': nameError}" @keydown.enter="validateInput">
     <button @click="validateInput" class="form-element" title="Adicionar nova tarefa">+</button>
     <div><span v-if="nameError" class="error-message">{{ nameError }}</span></div>
   </div>
@@ -54,14 +53,15 @@ export default {
 
 .form-element {
   outline: none;
-  font-size: 2rem;
+  font-size: 1rem;
   border: 1px solid #FFF;
   padding: 5px 10px 8px;
   color: #FFF;
 }
 
 input.form-element {
-  width: 500px;
+  width: 450px;
+  height: 30px;
   background: #FFF2;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -70,6 +70,7 @@ input.form-element {
 
 button.form-element {
   border-left: none;
+  height: 45px;
   background-color: #2196F3;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
