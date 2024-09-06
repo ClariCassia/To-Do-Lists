@@ -1,7 +1,8 @@
 <template>
   <div class="new-task">
     <input v-model="name" type="text" class="form-element"
-      placeholder="Adicione uma nova tarefa" :class="{'input-error': nameError}">
+      placeholder="Adicione uma nova tarefa" :class="{'input-error': nameError}"
+      @keydown.enter="validateInput">
     <button @click="validateInput" class="form-element" title="Adicionar nova tarefa">+</button>
     <div><span v-if="nameError" class="error-message">{{ nameError }}</span></div>
   </div>
