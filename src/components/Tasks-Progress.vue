@@ -43,7 +43,7 @@ export default {
   margin-bottom: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
   
 }
 
@@ -51,7 +51,7 @@ export default {
   position: absolute;
   border-radius: 8px;
   height: 100%;
-  background-color: #9C27B0;
+  background-color: #1565C0;
   width: 0;
   transition: 1s ease-in-out;
   align-self: start;
