@@ -1,29 +1,50 @@
-# todolist 
+<h1 align="center">To-do List</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+To-do List Interativa é uma aplicação construída com Vue.js, projetada para facilitar o gerenciamento de tarefas de forma simples e intuitiva. A interface oferece várias funcionalidades essenciais para uma experiência completa:
 
-## Recommended IDE Setup
+📝 Adicionar Tarefa: Os usuários podem adicionar novas tarefas, com validação que impede a inclusão de tarefas vazias ou duplicadas.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+👁️ Visualização das Tarefas: Cada tarefa adicionada aparece destacada em vermelho, indicando que está pendente. Ao clicar na tarefa, ela é marcada como concluída, mudando automaticamente para verde. O status da tarefa pode ser alternado entre pendente e concluído a qualquer momento, facilitando a distinção clara e rápida entre tarefas que ainda precisam ser feitas e aquelas já finalizadas.
 
-## Customize configuration
+🗑️ Excluir Tarefa: Cada tarefa possui um botão de exclusão, permitindo que o usuário remova tarefas individualmente.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+📊 Barra de Progresso: A barra de progresso exibe visualmente a porcentagem de tarefas concluídas, com a cor de preenchimento ajustando-se conforme o avanço.
 
-## Project Setup
+🚮 Excluir Todas as Tarefas: Para uma limpeza rápida, o usuário pode usar o botão de lixeira, que abre um alerta de confirmação para excluir todas as tarefas de uma vez.
 
-```sh
-npm install
-```
+O objetivo é gerenciar as tarefas de forma eficiente, com uma interface intuitiva e responsiva. Este projeto demonstra habilidades em Vue.js, validação de formulários e manipulação dinâmica de elementos.
 
-### Compile and Hot-Reload for Development
+Para ver o projeto pronto clique aqui 🖱️
 
-```sh
-npm run dev
-```
+(https://clari-cassia-projetcs-player-vs-monster.vercel.app/)
 
-### Compile and Minify for Production
+<h2 align="center">Layouts: Desktop / Mobile</h2>
 
-```sh
-npm run build
+<div align="center">
+    <img src="src/images/gif-desktop.gif" height="435px" alt="Layout Desktop" style="margin-right: 50px;" />
+    <img src="src/images/gif-mobile.gif" height="435px" alt="Layout Mobile" />
+</div>
+
+<h2 align="center"> O que eu aprendi</h2>
+
+Ao concluir este projeto aprendi a importância de validação de dados implementando validações para garantir que tarefas duplicadas ou vazias não fossem adicionadas, aprimorando a integridade dos dados, pide compreender mais sobre como gerenciar entradas e feedbacks dinâmicos em tempo real.
+
+Também pude explorar o uso de classes dinâmicas para alterar a aparência das tarefas conforme o status delas mudava, aplicando estilos diferentes para indicar tarefas pendentes ou concluídas. A implementação da barra de progresso foi outro ponto-chave, onde utilizei a reatividade do Vue.js para atualizar automaticamente o progresso de acordo com a conclusão das tarefas.
+
+Trabalhando com o objeto data, aprendi a gerenciar o estado da aplicação, garantindo que todas as tarefas fossem armazenadas e atualizadas de forma eficiente. O uso de métodos como computed me permitiu monitorar mudanças no estado das tarefas e ajustar elementos visuais e funcionais de acordo com essas mudanças, mantendo o código enxuto e fácil de manter.
+
+Esse projeto me proporcionou uma visão mais ampla de como Vue.js facilita a criação de interfaces interativas e responsivas, além de reforçar meu entendimento sobre gerenciamento de estado e manipulação de elementos dinâmicos
+
+<h2 align="center">Tecnologias utilizadas</h2>
+
+<div align="center">
+  <img  src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/css-1572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="Css" />
+  <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue" />
+</div>
+
+
+
+
+
 ```
