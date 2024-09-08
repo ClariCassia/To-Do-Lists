@@ -1,5 +1,5 @@
 <template>
-  <div @click="$emit('taskChanged', task)" class="task" :class="stateClass" title="Clique para marcar como concluída">
+  <div @click="$emit('taskChanged', task)" class="task" :class="stateClass" :title="stateTitle">
     <span @click="$emit('taskDeleted', task)" class="close" title="Deletar tarefa">x</span>
     <p>{{ task.name }}</p>
   </div>
@@ -13,12 +13,20 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      title: ''
+    }
+  },
   computed: {
     stateClass() {
       return {
         pending: this.task.pending,
         done: !this.task.pending
       }
+    },
+    stateTitle() {
+      return this.task.pending ? 'Marcar como concluído' : 'Marcar como pendente'
     }
   }
 }
@@ -36,17 +44,18 @@ export default {
     font-weight: 300;
     cursor: pointer;
     user-select: none;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-between;
     filter: drop-shadow(black 1px 1px 1px);
-
+  
   }
   
   .pending {
     border-left: 12px solid #B73229;
     background-color: #F44336;
   }
+  
   .pending .close {
     background-color: #B73229;
   }
