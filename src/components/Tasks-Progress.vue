@@ -5,7 +5,7 @@
       <span class="progress-value"> {{ progress }}%</span>
       <div class="progress-bar" :style="{ width: progress + '%' }"></div>
     </div>
-    <TrashButon></TrashButon>
+    <TrashButon :tasks="tasks"></TrashButon>
   
   </div>
 </template>

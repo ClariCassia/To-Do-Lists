@@ -1,15 +1,26 @@
 <template>
     <div>
-        <button title="Deletar todas as Tarefas">
+        <button title="Deletar todas as Tarefas" @click="DeleteAllTasks">
             <font-awesome-icon icon="trash" />
-        </button>
-    
+        </button>    
     </div>
 </template>
 
 <script>
 export default {
+  props: {
+    tasks: {
+      type: Array,
+      required: true
+    }
+  },
 
+  methods: {
+    DeleteAllTasks() {
+      const confirm = window.confirm('Tem certeza que deseja deletar todas as tarefas?')
+      confirm && this.tasks.splice(0, this.tasks.length)
+    }
+  }
 }
 </script>
 
