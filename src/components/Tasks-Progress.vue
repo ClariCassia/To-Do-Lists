@@ -1,15 +1,22 @@
 <template>
   <div v-if="tasks.length" class="container">
     <p class="info-paragraph">Concluido</p>
-    <div  class="tasks-progress">
+    <div class="tasks-progress">
       <span class="progress-value"> {{ progress }}%</span>
       <div class="progress-bar" :style="{ width: progress + '%' }"></div>
     </div>
+    <TrashButon></TrashButon>
+  
   </div>
 </template>
 
 <script>
+import TrashButon from './TrashButon.vue';
+
 export default {
+  components: {
+    TrashButon
+  },
   props: {
     progress: {
       type: Number,
@@ -39,12 +46,11 @@ export default {
   height: 15px;
   border: 1px solid #FFF;
   color: #FFF;
-  border-radius: 8px;
-  margin-bottom: 5px;
+  border-radius: 8px;  
   display: flex;
   flex-direction: column;
-  align-items: center;  
-  
+  align-items: center;
+
 }
 
 .progress-bar {
@@ -70,5 +76,13 @@ export default {
   font-size: 1rem;
   color: #FFF;
   margin: 0;
+}
+
+.displayprogress {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #1565C0;
+
 }
 </style>
