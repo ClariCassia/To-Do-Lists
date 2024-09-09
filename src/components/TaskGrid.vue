@@ -1,8 +1,8 @@
 <template>
   <div class="tasks-grid">
     <template v-if="tasks.length">
-      <Task v-for="(task, id) in tasks" :key="id" @taskDeleted="$emit('taskDeleted', id)"
-        @taskChanged="$emit('taskChanged', id )" :task="task">
+      <Task v-for="task in tasks" :key="task.id" @taskDeleted="$emit('taskDeleted', task.id)"
+        @taskChanged="$emit('taskChanged', task.id)" :task="task">
       </Task>
     </template>
     <p class="no-task" v-else>Suas tarefas estão em dia 😉</p>
@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style  scoped>
+<style scoped>
 .tasks-grid {
   display: flex;
   flex-direction: column;

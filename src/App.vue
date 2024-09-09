@@ -6,15 +6,16 @@
     </div>
     <div class="display">
       <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
-      <TasksProgress :progress="processed" :tasks="tasks">        
+      <TasksProgress :progress="processed" :tasks="tasks">
       </TasksProgress>
     </div>
-    
+
     <TaskGrid @taskDeleted="deleteTask" @taskChanged="tooglePedding" :tasks="tasks"></TaskGrid>
   </div>
 </template>
 
 <script>
+
 import TaskGrid from './components/TaskGrid.vue'
 import NewTaskVue from './components/NewTask.vue'
 import TasksProgress from './components/Tasks-Progress.vue';
@@ -24,13 +25,13 @@ export default {
   components: {
     TaskGrid,
     NewTaskVue,
-    TasksProgress, 
+    TasksProgress,
     TrashButon
 
   },
   data() {
     return {
-      tasks: [], 
+      tasks: [],
       img
     }
   },
@@ -41,23 +42,40 @@ export default {
       return Math.round((done / total) * 100) || 0
     }
   },
+  watch: {
+    tasks: {
+      deep: true,
+      handler() {
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      },
+    }
+  },
   methods: {
     addNewTask(newTask) {
       const { name, pending = true } = newTask;
-      this.tasks.push({ name, pending });
+      const id = Date.now();
+      this.tasks.push({ id, name, pending });
     },
     deleteTask(id) {
-      this.tasks.splice(id, 1);
+      this.tasks = this.tasks.filter(task => task.id !== id);
     },
     tooglePedding(id) {
-      this.tasks[id].pending = !this.tasks[id].pending
+      const task = this.tasks.find(t => t.id === id);
+      if (task) {
+        task.pending = !task.pending;
+      }
     }
+  },
+  created() {
+    const json = localStorage.getItem('tasks')
+    const arrayLocal = JSON.parse(json)
+    Array.isArray(arrayLocal) ? this.tasks = arrayLocal : this.tasks = []
   }
 }
 </script>
 
-<style>
-#app {  
+<style scoped>
+#app {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -76,18 +94,16 @@ export default {
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
 
 }
-img{
+
+img {
   width: 120px;
   margin-bottom: 20px;
   height: auto;
   filter: drop-shadow(black 2px 2px 2px);
 }
 
-.display{
-
-
-}
+.display {}
 </style>
