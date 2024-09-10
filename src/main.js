@@ -1,20 +1,18 @@
-import './assets/base.css'
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import './assets/base.css';
 
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fas);
+library.add(faTrash);
 
-// Criando a aplicação Vue
-const app = createApp(App)
+const app = createApp(App);
 
-// Registrando o componente do Font Awesome
-app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('font-awesome-icon', FontAwesomeIcon);
 
-// Montando a aplicação
-app.mount('#app')
+app.mount('#app');
+

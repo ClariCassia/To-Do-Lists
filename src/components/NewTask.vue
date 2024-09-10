@@ -1,7 +1,7 @@
 <template>
   <div class="new-task">
     <input v-model="name" type="text" class="form-element" placeholder="Adicione uma nova tarefa"
-      :class="{'input-error': nameError}" @keydown.enter="validateInput">
+      :class="{ 'input-error': nameError }" @keydown.enter="validateInput">
     <button @click="validateInput" class="form-element" title="Adicionar nova tarefa">+</button>
     <div><span v-if="nameError" class="error-message">{{ nameError }}</span></div>
   </div>
@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .new-task {
   margin: 35px;
 }
@@ -65,7 +65,6 @@ input.form-element {
   background: #FFF2;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-
 }
 
 button.form-element {
@@ -80,7 +79,6 @@ button.form-element {
 button:hover {
   background-color: #0c7cd5;
   transition: 0.3s ease, transform 0.2s ease;
-
 }
 
 .input-error {

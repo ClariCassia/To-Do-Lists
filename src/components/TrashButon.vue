@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <button title="Deletar todas as Tarefas" @click="DeleteAllTasks">
-            <font-awesome-icon icon="trash" />
-        </button>    
-    </div>
+  <div>
+    <button title="Deletar todas as Tarefas" @click="DeleteAllTasks">
+      <font-awesome-icon icon="trash" />
+    </button>
+  </div>
 </template>
 
 <script>
@@ -26,14 +26,16 @@ export default {
 
 <style scoped>
 button {
-    background: none;
-    color: #263238;
-    cursor: pointer;
-    font-size: 1.3rem;
-    border: none;
+  background: none;
+  color: #263238;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border: none;
 }
 
 button:hover {
-    color: #546E7A;
+  color: #546E7A;
+  transition-duration: 9ms;
+  transition: 0.3s ease
 }
 </style>

@@ -1,14 +1,19 @@
 <template>
   <div id="app">
+
     <div class="container">
       <h1>Minhas Tarefas</h1>
-      <img :src="img" alt="Logo" class="logo">
-    </div> 
-      <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
-      <TasksProgress :progress="processed" :tasks="tasks">
-      </TasksProgress>   
+      <img :src="img" alt="Prancheta de tarefas" class="logo">
+    </div>
+
+    <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
+
+    <TasksProgress :progress="processed" :tasks="tasks">
+
+    </TasksProgress>
 
     <TaskGrid @taskDeleted="deleteTask" @taskChanged="tooglePedding" :tasks="tasks"></TaskGrid>
+
   </div>
 </template>
 
@@ -21,21 +26,22 @@ import img from './images/IMG1.png';
 import TrashButon from './components/TrashButon.vue';
 import './assets/responsive.css';
 
-
 export default {
+
   components: {
     TaskGrid,
     NewTaskVue,
     TasksProgress,
     TrashButon
-
   },
+
   data() {
     return {
       tasks: [],
       img
     }
   },
+
   computed: {
     processed() {
       const total = this.tasks.length
@@ -43,6 +49,7 @@ export default {
       return Math.round((done / total) * 100) || 0
     }
   },
+
   watch: {
     tasks: {
       deep: true,
@@ -51,6 +58,7 @@ export default {
       },
     }
   },
+
   methods: {
     addNewTask(newTask) {
       const { name, pending = true } = newTask;
@@ -96,7 +104,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 img {
@@ -105,5 +112,4 @@ img {
   height: auto;
   filter: drop-shadow(black 2px 2px 2px);
 }
-
 </style>

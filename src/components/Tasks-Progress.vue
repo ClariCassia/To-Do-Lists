@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .container-progress {
   display: flex;
   align-items: center;
@@ -50,7 +50,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .progress-bar {
@@ -83,6 +82,5 @@ export default {
   display: flex;
   align-items: center;
   background-color: #1565C0;
-
 }
 </style>

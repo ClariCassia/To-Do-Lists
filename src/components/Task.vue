@@ -65,7 +65,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   filter: drop-shadow(black 1px 1px 1px);
-
 }
 
 .pending {
@@ -115,7 +114,7 @@ export default {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
-  border: #fff solid 1px; /* Borda da notificação */
+  border: #fff solid 1px;
   font-size: 12px;
   white-space: nowrap;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -129,19 +128,17 @@ export default {
   transform: translateX(-50%);
   border-width: 4px;
   border-style: solid;
-  border-color: #fff transparent transparent transparent; /* Borda branca ao redor da setinha */
+  border-color: #fff transparent transparent transparent;
 }
 
 .notification::after {
   content: '';
   position: absolute;
-  top: calc(100% - 2px); /* Ajusta para ficar abaixo da setinha */
+  top: calc(100% - 2px);
   left: 50%;
   transform: translateX(-50%);
   border-width: 3px;
   border-style: solid;
-  border-color: #333 transparent transparent transparent; /* Cor da setinha */
+  border-color: #333 transparent transparent transparent;
 }
-
-
 </style>
