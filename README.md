@@ -50,7 +50,3 @@ Esse projeto me proporcionou uma visão mais ampla de como Vue.js facilita a cri
 </div>
 
 
-
-
-
-```
