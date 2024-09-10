@@ -1,0 +1,26 @@
+/* responsive.css */
+@media (max-width: 450px) {
+
+    .container img {
+        display: none;
+    }
+
+    .container h1 {
+        font-size: 3rem !important;
+    }
+
+    .new-task input.form-element {
+        width: 230px;
+    }
+
+    .tasks-grid .task {
+        width: 350px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 688px) {
+    #app {
+        gap: 35px;
+    }
+}

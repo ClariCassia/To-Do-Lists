@@ -11,6 +11,7 @@
 
 <script>
 import Task from './Task.vue'
+import '../assets/responsive.css'
 export default {
   components: {
     Task
@@ -24,7 +25,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .tasks-grid {
   display: flex;
   flex-direction: column;

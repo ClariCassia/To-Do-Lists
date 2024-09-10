@@ -3,12 +3,10 @@
     <div class="container">
       <h1>Minhas Tarefas</h1>
       <img :src="img" alt="Logo" class="logo">
-    </div>
-    <div class="display">
+    </div> 
       <NewTaskVue @taskAdded="addNewTask" :tasks="tasks"></NewTaskVue>
       <TasksProgress :progress="processed" :tasks="tasks">
-      </TasksProgress>
-    </div>
+      </TasksProgress>   
 
     <TaskGrid @taskDeleted="deleteTask" @taskChanged="tooglePedding" :tasks="tasks"></TaskGrid>
   </div>
@@ -21,6 +19,9 @@ import NewTaskVue from './components/NewTask.vue'
 import TasksProgress from './components/Tasks-Progress.vue';
 import img from './images/IMG1.png';
 import TrashButon from './components/TrashButon.vue';
+import './assets/responsive.css';
+
+
 export default {
   components: {
     TaskGrid,
@@ -74,7 +75,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 #app {
   display: flex;
   flex: 1;
@@ -105,5 +106,4 @@ img {
   filter: drop-shadow(black 2px 2px 2px);
 }
 
-.display {}
 </style>

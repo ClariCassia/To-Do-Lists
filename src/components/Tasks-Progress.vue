@@ -1,12 +1,12 @@
 <template>
-  <div v-if="tasks.length" class="container">
+  <div v-if="tasks.length" class="container-progress">
     <p class="info-paragraph">Concluido</p>
     <div class="tasks-progress">
       <span class="progress-value"> {{ progress }}%</span>
       <div class="progress-bar" :style="{ width: progress + '%' }"></div>
     </div>
     <TrashButon :tasks="tasks"></TrashButon>
-  
+
   </div>
 </template>
 
@@ -30,8 +30,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.container {
+<style >
+.container-progress {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@ export default {
   height: 15px;
   border: 1px solid #FFF;
   color: #FFF;
-  border-radius: 8px;  
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;

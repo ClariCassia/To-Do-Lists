@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 .new-task {
   margin: 35px;
 }

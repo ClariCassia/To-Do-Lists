@@ -4,8 +4,9 @@
     <p>{{ task.name }}</p>
   </div>
 </template>
-  
-  <script>
+
+<script>
+import '../assets/responsive.css';
 export default {
   props: {
     task: {
@@ -30,63 +31,62 @@ export default {
     }
   }
 }
-  </script>
-  
-  <style scoped>
+</script>
+
+<style>
 .task {
-    position: relative;
-    box-sizing: border-box;
-    width: 450px;
-    height: 40px;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    font-weight: 300;
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    filter: drop-shadow(black 1px 1px 1px);
-  
-  }
-  
-  .pending {
-    border-left: 12px solid #B73229;
-    background-color: #F44336;
-  }
-  
-  .pending .close {
-    background-color: #B73229;
-  }
-  
-  .done {
-    color: #DDD;
-    border-left: 12px solid #0a8f08;
-    background-color: #4CAF50;
-    text-decoration: line-through;
-  }
-  
-  .done .close {
-    background-color: #0a8f08;
-  }
-  
-  .close {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    height: 20px;
-    width: 20px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .close:hover {
-    background-color: #42545eb7;
-    transition: 0.3s ease, transform 0.2s ease;
-  }
+  position: relative;
+  box-sizing: border-box;
+  width: 450px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: 300;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  filter: drop-shadow(black 1px 1px 1px);
+
+}
+
+.pending {
+  border-left: 12px solid #B73229;
+  background-color: #F44336;
+}
+
+.pending .close {
+  background-color: #B73229;
+}
+
+.done {
+  color: #DDD;
+  border-left: 12px solid #0a8f08;
+  background-color: #4CAF50;
+  text-decoration: line-through;
+}
+
+.done .close {
+  background-color: #0a8f08;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.close:hover {
+  background-color: #42545eb7;
+  transition: 0.3s ease, transform 0.2s ease;
+}
 </style>
-  
