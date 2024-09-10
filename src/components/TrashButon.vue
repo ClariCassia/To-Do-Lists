@@ -1,24 +1,41 @@
 <template>
   <div>
-    <button title="Deletar todas as Tarefas" @click="DeleteAllTasks">
+    <button title="Deletar todas as Tarefas" @click="showModal = true">
       <font-awesome-icon icon="trash" />
     </button>
+
+    <Modal
+      v-if="showModal"
+      :message="'Tem certeza que deseja deletar todas as tarefas?'"
+      :isVisible="showModal"
+      @confirm="deleteAllTasks"
+      @cancel="showModal = false"
+    />
   </div>
 </template>
 
 <script>
+import Modal from './Modal.vue'
+
 export default {
+  components: {
+    Modal
+  },
   props: {
     tasks: {
       type: Array,
       required: true
     }
   },
-
+  data() {
+    return {
+      showModal: false
+    }
+  },
   methods: {
-    DeleteAllTasks() {
-      const confirm = window.confirm('Tem certeza que deseja deletar todas as tarefas?')
-      confirm && this.tasks.splice(0, this.tasks.length)
+    deleteAllTasks() {
+      this.tasks.splice(0, this.tasks.length);
+      this.showModal = false; 
     }
   }
 }
@@ -36,6 +53,6 @@ button {
 button:hover {
   color: #546E7A;
   transition-duration: 9ms;
-  transition: 0.3s ease
+  transition: 0.3s ease;
 }
 </style>
