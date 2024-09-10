@@ -6,6 +6,8 @@ To-do List Express é uma aplicação construída com Vue.js, projetada para fac
 
 👁️ Visualização das Tarefas: Cada tarefa adicionada aparece destacada em vermelho, indicando que está pendente. Ao clicar na tarefa, ela é marcada como concluída, mudando automaticamente para verde. O status da tarefa pode ser alternado entre pendente e concluído a qualquer momento, facilitando a distinção clara e rápida entre tarefas que ainda precisam ser feitas e aquelas já finalizadas.
 
+💬 Notificação de Estado: Ao clicar em uma tarefa para marcá-la como pendente ou concluída, um balão de notificação aparece brevemente para indicar a mudança de estado da tarefa e desaparece após alguns instantes.
+
 🗑️ Excluir Tarefa: Cada tarefa possui um botão de exclusão, permitindo que o usuário remova tarefas individualmente.
 
 📊 Barra de Progresso: A barra de progresso exibe visualmente a porcentagem de tarefas concluídas, com a cor de preenchimento ajustando-se conforme o avanço.
@@ -18,9 +20,7 @@ To-do List Express é uma aplicação construída com Vue.js, projetada para fac
 
 O objetivo é gerenciar as tarefas de forma eficiente, com uma interface intuitiva e responsiva. Este projeto demonstra habilidades em Vue.js, validação de formulários e manipulação dinâmica de elementos.
 
-Para ver o projeto pronto clique aqui 🖱️
-
-(https://clari-cassia-projetcs-player-vs-monster.vercel.app/)
+Para ver o projeto pronto [clique aqui 🖱️](https://clari-cassia-projetcs-to-do-list.vercel.app/)
 
 <h2 align="center">Layouts: Desktop / Mobile</h2>
 
@@ -34,6 +34,8 @@ Para ver o projeto pronto clique aqui 🖱️
 Ao concluir este projeto aprendi a importância de validação de dados implementando validações para garantir que tarefas duplicadas ou vazias não fossem adicionadas, aprimorando a integridade dos dados, pide compreender mais sobre como gerenciar entradas e feedbacks dinâmicos em tempo real.
 
 Também pude explorar o uso de classes dinâmicas para alterar a aparência das tarefas conforme o status delas mudava, aplicando estilos diferentes para indicar tarefas pendentes ou concluídas. A implementação da barra de progresso foi outro ponto-chave, onde utilizei a reatividade do Vue.js para atualizar automaticamente o progresso de acordo com a conclusão das tarefas.
+
+Ao adicionar a funcionalidade de notificação para mudanças de estado das tarefas, utilizei o setTimeout para exibir um balão de notificação que desaparece após alguns instantes. Esse recurso me ensinou sobre a importância de gerenciar a visibilidade temporária de elementos e de como utilizar métodos e temporizadores para criar feedbacks visuais dinâmicos e interativos
 
 Trabalhando com o objeto data, aprendi a gerenciar o estado da aplicação, garantindo que todas as tarefas fossem armazenadas e atualizadas de forma eficiente. O uso de métodos como computed me permitiu monitorar mudanças no estado das tarefas e ajustar elementos visuais e funcionais de acordo com essas mudanças, mantendo o código enxuto e fácil de manter.
 
@@ -49,8 +51,3 @@ Esse projeto me proporcionou uma visão mais ampla de como Vue.js facilita a cri
   <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue" />
 </div>
 
-
-
-
-
-```
