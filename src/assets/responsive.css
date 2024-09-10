@@ -1,4 +1,9 @@
-/* responsive.css */
+@media (max-width: 688px) {
+    #app {
+        gap: 35px;
+    }
+}
+
 @media (max-width: 450px) {
 
     .container img {
@@ -19,8 +24,8 @@
     }
 }
 
-@media (max-width: 688px) {
-    #app {
-        gap: 35px;
+@media (max-width: 360px) {
+    .tasks-grid .task {
+        width: 320px;
     }
 }
