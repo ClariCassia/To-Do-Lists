@@ -108,13 +108,40 @@ export default {
 
 .notification {
   position: absolute;
-  top: 30px;
-  left: 0;
+  top: -20px;
+  left: 90%;
+  transform: translateX(-50%);
   background-color: #333;
   color: #fff;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 5px;
+  border: #fff solid 1px; /* Borda da notificação */
   font-size: 12px;
   white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.notification::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent; /* Borda branca ao redor da setinha */
+}
+
+.notification::after {
+  content: '';
+  position: absolute;
+  top: calc(100% - 2px); /* Ajusta para ficar abaixo da setinha */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 3px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent; /* Cor da setinha */
+}
+
+
 </style>
