@@ -1,7 +1,8 @@
 <template>
-  <div @click="$emit('taskChanged', task)" class="task" :class="stateClass" :title="stateTitle">
+  <div @click="handleClick" class="task" :class="stateClass" :title="stateTitle">
     <span @click="$emit('taskDeleted', task)" class="close" title="Deletar tarefa">x</span>
     <p>{{ task.name }}</p>
+    <div v-if="showNotification" class="notification">{{ notificationText }}</div>
   </div>
 </template>
 
@@ -16,7 +17,9 @@ export default {
   },
   data() {
     return {
-      title: ''
+      title: '',
+      showNotification: false,
+      notificationText: ''
     }
   },
   computed: {
@@ -29,6 +32,19 @@ export default {
     stateTitle() {
       return this.task.pending ? 'Marcar como concluído' : 'Marcar como pendente'
     }
+  },
+  methods: {
+    handleClick() {
+      this.$emit('taskChanged', this.task);
+      this.toggleTask();
+    },
+    toggleTask() {
+      this.showNotification = true;
+      this.notificationText = this.task.pending ? 'Tarefa marcada como pendente!' : 'Tarefa marcada como concluída!';
+      setTimeout(() => {
+        this.showNotification = false;
+      }, 2000);
+    },
   }
 }
 </script>
@@ -88,5 +104,17 @@ export default {
 .close:hover {
   background-color: #42545eb7;
   transition: 0.3s ease, transform 0.2s ease;
+}
+
+.notification {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 </style>
