@@ -51,7 +51,5 @@ Esse projeto me proporcionou uma visão mais ampla de como Vue.js facilita a cri
   <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue" />
 </div>
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 3e2b02ab36eb1d32e777ee6ebc2ed38e10f4848d
+
