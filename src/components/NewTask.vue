@@ -1,7 +1,14 @@
 <template>
   <div class="new-task">
-    <input v-model="name" type="text" class="form-element" placeholder="Adicione uma nova tarefa"
-      :class="{ 'input-error': nameError }" @keydown.enter="validateInput">
+    <input 
+      v-model="name" 
+      type="text" 
+      class="form-element" 
+      placeholder="Adicione uma nova tarefa"
+      :class="{ 'input-error': nameError }" 
+      @keydown.enter="validateInput" 
+      @focus="clearError" 
+    >
     <button @click="validateInput" class="form-element" title="Adicionar nova tarefa">+</button>
     <div><span v-if="nameError" class="error-message">{{ nameError }}</span></div>
   </div>
@@ -41,6 +48,9 @@ export default {
     addTask() {
       this.$emit('taskAdded', { name: this.name })
       this.name = ""
+    },
+    clearError() {
+      this.nameError = ""; 
     }
   }
 }
@@ -83,6 +93,7 @@ button:hover {
 
 .input-error {
   border: 1px solid #B73229;
+  font-weight: bold;
 }
 
 .error-message {
