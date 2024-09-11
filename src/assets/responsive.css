@@ -22,6 +22,10 @@
         width: 350px;
         height: 35px;
     }
+
+    .task .notification {
+        left: 70%;
+    }
 }
 
 @media (max-width: 360px) {
